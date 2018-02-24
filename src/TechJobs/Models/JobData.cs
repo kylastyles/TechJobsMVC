@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -15,6 +16,10 @@ namespace TechJobs.Models
             LoadData();
 
             // Bonus mission: return a copy
+            //List<Dictionary<string, string>> AllJobs = new List<Dictionary<string, string>>();
+            //List<Dictionary<string, string>> AllJobsCopy = new List<Dictionary<string, string>>();
+
+            //AllJobs.CopyTo(AllJobsCopy);
             return new List<Dictionary<string, string>>(AllJobs);
         }
 
