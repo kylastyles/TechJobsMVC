@@ -17,12 +17,20 @@ namespace TechJobs.Controllers
         [HttpPost]
         public IActionResult Results(string searchType, string searchTerm)
         {
+            ViewBag.searchword = searchTerm;
             ViewBag.columns = ListController.columnChoices;
             List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
 
             if (searchType.Equals("all"))
             {
-                jobs = JobData.FindByValue(searchTerm);
+                if (searchTerm == null)
+                {
+                    jobs = JobData.FindAll();
+                } else
+                {
+                    jobs = JobData.FindByValue(searchTerm);
+                }
+
             }
             else
             {

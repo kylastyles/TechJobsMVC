@@ -17,9 +17,8 @@ namespace TechJobs.Models
 
             // Bonus mission: return a copy
             //List<Dictionary<string, string>> AllJobs = new List<Dictionary<string, string>>();
-            //List<Dictionary<string, string>> AllJobsCopy = new List<Dictionary<string, string>>();
+            //List<Dictionary<string, string>> AllJobsCopy = AllJobs;
 
-            //AllJobs.CopyTo(AllJobsCopy);
             return new List<Dictionary<string, string>>(AllJobs);
         }
 
@@ -58,6 +57,7 @@ namespace TechJobs.Models
 
             List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
 
+            
             foreach (Dictionary<string, string> row in AllJobs)
             {
 
@@ -99,8 +99,9 @@ namespace TechJobs.Models
                 if (aValue.ToLower().Contains(value.ToLower()))
                 {
                     jobs.Add(row);
-                }
+                } 
             }
+
 
             return jobs;
         }

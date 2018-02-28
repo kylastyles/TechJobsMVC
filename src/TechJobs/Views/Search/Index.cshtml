@@ -12,7 +12,7 @@
                        name="searchType"
                        id="@column.Key"
                        value="@column.Key"
-                       checked="@column.Key == 'all''" />
+                       checked="@column.Key == 'all'" />
                 <label for="@column.Key">@column.Value</label>
             </span>
         }
@@ -31,7 +31,7 @@
 @if (ViewBag.jobs != null)
 {
 
-    <h3>@ViewBag.jobs.Count Result(s)</h3>
+    <h3>@ViewBag.jobs.Count Result(s) for "@ViewBag.searchword"</h3>
 
 
     <br />
